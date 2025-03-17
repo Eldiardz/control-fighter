@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.up{
+			width: 70px;
+			height: 70px;
+			background-image: url(up.png);
+			background-size: 100% 100%;
+			position: absolute;
+			left: 70px;
+			top: 0px;
+			
+		}
+		.down{
+			width: 70px;
+			height: 70px;
+			background-image: url(down.png);
+			background-size: 100% 100%;
+			position: absolute;
+			left: 70px;
+			top: 70px;
+		}
+		.left{
+			width: 70px;
+			height: 70px;
+			background-image: url(left.png);
+			background-size: 100% 100%;
+			position: absolute;
+			left: 0px;
+			top: 70px;
+		}
+		.right{
+			width: 70px;
+			height: 70px;
+			background-image: url(right.png);
+			background-size: 100% 100%;
+			position: absolute;
+			left: 140px;
+			top: 70px;
+		}
+		.fighter{
+			width: 300px;
+			height: 300px;
+			
+			margin-top: 150px;
+			margin-left: 0px;
+			background-image: url(sprite.png);
+			background-size: 100% 100%;
+			transition: 1s;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="up"></div>
+	<div class="down"></div>
+	<div class="left"></div>
+	<div class="right"></div>
+	<div class="fighter"></div>
+	<script>
+		//8. Управляй бойцом, используя стрелки. 
+		let position = 0
+		let goida = 150
+		document.querySelector(".right").onclick = function(){
+			position += 50;
+			document.querySelector(".fighter").style.marginLeft = position + "px"
+		}
+		document.querySelector(".left").onclick = function(){
+			position -= 50;
+			document.querySelector(".fighter").style.marginLeft = position + "px"
+		}
+		document.querySelector(".down").onclick = function(){
+			goida += 50;
+			document.querySelector(".fighter").style.marginTop = goida + "px"
+		}
+		document.querySelector(".up").onclick = function(){
+			goida -= 50;
+			document.querySelector(".fighter").style.marginTop = goida + "px"
+		}
+	</script>
+</body>
+</html>
